@@ -1,0 +1,18 @@
+import random
+
+def game():
+    user = input("'r' for rock, 's' for scissors, 'p' for paper, you choice: ")
+    computer = random.choice(['r', 'p', 's'])
+    if user == computer:
+        print('Tie')
+    if is_win(user, computer):
+        print('You won!')
+    else:
+        print('You lost!')
+
+
+def is_win(player,opponent):
+    if (player == 's' and opponent == 'p') or (player == 'p' and opponent == 'r') or (player == 'r' and opponent == 's'):
+        return True
+
+game()
